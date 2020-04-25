@@ -10,6 +10,7 @@ Detailed project description can be found on [GitHub](https://github.com/ianmclo
     * [Iris dataset history](#iris_dataset_history)
     * [Iris dataset file](#iris_dataset_file)
 * [References](#references)
+    * [Worthy reference mentions](#worthy-reference-mentions)
 
 # Iris dataset
 
@@ -37,7 +38,7 @@ The columns that represent records mentioned above are :
 * Species
 
 
-Iris dataset [3] used in this analysis can be found among files in this repository as [Iris_dataset.txt](https://github.com/sandraelekes/pands-project-2020/blob/master/Iris_dataset.txt).
+Iris dataset [3] used in this analysis can be found among files in this repository as [Iris_dataset.csv](https://github.com/sandraelekes/pands-project-2020/blob/master/Iris_dataset.csv).
 
 
 
@@ -49,7 +50,7 @@ Iris dataset [3] used in this analysis can be found among files in this reposito
 
 
 
-## Worthy refernce mentions
+## Worthy reference mentions
 
 This is the list of resources used for better understanding of requirements for the project, but not directly used in accomplisihg it:
 
