@@ -12,8 +12,8 @@ Detailed project description can be found on [GitHub](https://github.com/ianmclo
 * [Python code](#python_code)
     * [Imported libraries and modules](#imported_libraries_and_modules)
         * [Libraries cheat sheets](#libraries_cheat_sheets)
-    * [Data import](#data_import)
-    * [Data summary](#data_summary)
+    * [Dataset import](#dataset_import)
+    * [Dataset summary](#dataset_summary)
 * [References](#references)
     * [Worthy mentions](#worthy-mentions)
 
@@ -85,14 +85,52 @@ List of usefull cheat sheets for libraries used in this project:
 * [Matplotlib](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Matplotlib_Cheat_Sheet.pdf)
 * [Seaborn](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Seaborn_Cheat_Sheet.pdf)
 
-## Data import 
+## Dataset import 
 
     ifds = pd.read_csv("dataset.csv", index_col="Id")
 
 This line of code is used for reading the .csv file into DataFrame and storing it as a variable *ifds* (iris flower dataset) for further analysis and manipulation.\
 Since *pandas* is using zero-based integer indices in the DataFrame,  *index_col="Id"* was used to make the Id column an index column while reading the file. [14]
-## Data summary
 
+## Dataset summary
+
+    def summary_to_file():
+        sys.stdout = open ("analysis_summary.txt","w")
+        print ("\n")
+        print ("Overview of the whole dataset:")
+        print ("\n")
+        print(ifds)
+        print ("\n")
+        print ("Summary of numeric values: ")
+        print ("\n")
+        print (ifds.describe())
+        print ("\n")
+        print ("Number of samples of each type:")
+        print ("\n")
+        print (ifds.info())
+        print ("\n")
+        print("Number of occurances of each of the species:")
+        print ("\n")
+        print (ifds["Species"].value_counts())
+        sys.stdout.close()
+
+Dataset summary is not shown while starting the program, but rather stored in [analysis_summary.txt](https://github.com/sandraelekes/pands-project-2020/blob/master/analysis_summary.txt).
+
+Function *summary_to_file()* is created for making the summary and writing it into the file at the same time.
+
+Writing outputs of the summary into a file is achieved with use of *sys* module and it's attribute *stdout*. *stdout* (standard output stream) is simply a default place to send a program’s text output.[15][16]\
+Initial idea was to create a function with outputs of summary and write that output into a .txt file. After a long research and "trial and error technique" it seemed to complicated to code and this approach is chosen over writing in file with the help of .write(), because code is simpler and any *print* operation will write it's output to a .txt file, where .write() function only takes string value as an input(). [17][18][19]
+
+
+
+# Technologies used
+
+* Visual Studio Code - version 1.44.2
+* cmder - version 1.3.14.982
+* python - version 3.7.4.final.0
+* Anaconda3 - 2019.10
+* Notepad++ - version 7.8.5
+* Mozzila Firefox 75.0 (64-bit)
 
 # References
 
@@ -109,8 +147,13 @@ Since *pandas* is using zero-based integer indices in the DataFrame,  *index_col
 [11] [Seaborn. Introduction.](https://seaborn.pydata.org/introduction.html)\
 [12] [Datacamp. Seaborn Python tutorial](https://www.datacamp.com/community/tutorials/seaborn-python-tutorial#sm)\
 [13] [Python.org. Sys](https://docs.python.org/3/library/sys.html)\
-[14] [Real python. Python csv.](https://realpython.com/python-csv/)
-
+[14] [Real python. Python csv.](https://realpython.com/python-csv/)\
+[15] [Lutz, M. (2009)."Learning Python", pg. 303](https://cfm.ehu.es/ricardo/docs/python/Learning_Python.pdf)\
+[16] [StackOverflow.Sys.stdout](https://stackoverflow.com/questions/3263672/the-difference-between-sys-stdout-write-and-print)\
+[17] [Real Python. Read Write files Python](https://realpython.com/read-write-files-python/)\
+[18] [Geeksforgeeks. Reading and writing text files](https://www.geeksforgeeks.org/reading-writing-text-files-python/)\
+[19] [StackOverflow. Python writing function output to a file.](https://stackoverflow.com/questions/28356648/python-writing-function-output-to-a-file)\
+[20] 
 
 
 ## Worthy mentions
