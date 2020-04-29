@@ -15,7 +15,7 @@ Detailed project description can be found on [GitHub](https://github.com/ianmclo
     * [Data import](#data_import)
     * [Data summary](#data_summary)
 * [References](#references)
-    * [Worthy reference mentions](#worthy-reference-mentions)
+    * [Worthy mentions](#worthy-mentions)
 
 # **Iris dataset**
 
@@ -73,6 +73,7 @@ Working with DataFrames is a bit easier with the Seaborn because the plotting fu
 [Elite data science](https://elitedatascience.com/python-seaborn-tutorial) has interesting tutorial on *seaborn* presented on a famous Pokemon cartoon based dataset.
 
 ***sys*** module represents system-specific parameters and functions and provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter. [13]
+Interesting tutorial on *sys* can be found on [Python programming](https://pythonprogramming.net/sys-module-python-3/) and [Data Flair](https://data-flair.training/blogs/python-sys-module/).
 
 
 ### **Libraries cheat sheets**
@@ -86,8 +87,10 @@ List of usefull cheat sheets for libraries used in this project:
 
 ## Data import 
 
+    ifds = pd.read_csv("dataset.csv", index_col="Id")
 
-
+This line of code is used for reading the .csv file into DataFrame and storing it as a variable *ifds* (iris flower dataset) for further analysis and manipulation.\
+Since *pandas* is using zero-based integer indices in the DataFrame,  *index_col="Id"* was used to make the Id column an index column while reading the file. [14]
 ## Data summary
 
 
@@ -106,13 +109,25 @@ List of usefull cheat sheets for libraries used in this project:
 [11] [Seaborn. Introduction.](https://seaborn.pydata.org/introduction.html)\
 [12] [Datacamp. Seaborn Python tutorial](https://www.datacamp.com/community/tutorials/seaborn-python-tutorial#sm)\
 [13] [Python.org. Sys](https://docs.python.org/3/library/sys.html)\
+[14] [Real python. Python csv.](https://realpython.com/python-csv/)
 
 
 
-## Worthy reference mentions
+## Worthy mentions
 
 This is the list of sources that have not been used in analysis or summary of the Iris dataset but rather for better understanding of requirements for the project, researching how to edit the readme file and also interesting sources worth of reading.
 
 * [Fisher, R. A. (1936). “The Use of Multiple Measurements in Taxonomic Problems”](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x)
-
 * [Github. Deleting files.](https://help.github.com/en/github/managing-files-in-a-repository/deleting-files)
+* [Towards data science. Introduction to pandas.](https://towardsdatascience.com/a-quick-introduction-to-the-pandas-python-library-f1b678f34673)
+* [Real python. Pandas DataFrame](https://realpython.com/pandas-dataframe/)
+* [Pandas.pydata.org](https://pandas.pydata.org/docs/#)
+* [Elite data science. Seaborn tutorial.](https://elitedatascience.com/python-seaborn-tutorial)
+* [Python programming. Sys module.](https://pythonprogramming.net/sys-module-python-3/)
+* [Data Flair. Python sys module](https://data-flair.training/blogs/python-sys-module/)
+
+## Dataset analysis approach by others
+
+* https://rajritvikblog.wordpress.com/2017/06/29/iris-dataset-analysis-python/
+* https://www.kaggle.com/abhishekkrg/python-iris-data-visualization-and-explanation
+* https://www.kaggle.com/aschakra/iris-data-visualization-using-python
