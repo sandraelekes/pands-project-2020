@@ -57,18 +57,18 @@ None
 Number of occurances of each of the species:
 
 
-Iris-virginica     50
 Iris-setosa        50
 Iris-versicolor    50
+Iris-virginica     50
 Name: Species, dtype: int64
 
 
      In percentile:
 
 
-Iris-virginica     33.333333
 Iris-setosa        33.333333
 Iris-versicolor    33.333333
+Iris-virginica     33.333333
 Name: Species, dtype: float64
 
 

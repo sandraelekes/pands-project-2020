@@ -96,7 +96,6 @@ def petal_width_hist():
 
 # function for uniting all the functions for creating histograms
 def histograms():
-   
     sepal_length_hist()
     sepal_width_hist()
     petal_length_hist()
@@ -134,10 +133,13 @@ def scatterplots():
     sepal_length_width_scat()
     petal_length_width_scat()
 
+# function for plotting pairplot
 def pairplot():
     sns.pairplot(ifds, hue = "Species", diag_kind = "hist", palette = ["deeppink","mediumorchid","navy"])
     plt.savefig("Iris-dataset-pairplot.png")
     plt.show()
+
+
 # main part of the code
 
 # index_col = "Id" was used to make the Id column an index column
@@ -145,12 +147,12 @@ def pairplot():
 
 ifds = pd.read_csv("Iris_dataset.csv", index_col = "Id")
 
-#summary_to_file()
+summary_to_file()
 
 iris_s = ifds[ifds.Species == "Iris-setosa"]
 iris_vers = ifds[ifds.Species == "Iris-versicolor"]
 iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
-#histograms()
-# scatterplots()
+histograms()
+scatterplots()
 pairplot()

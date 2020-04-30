@@ -1,6 +1,6 @@
 # Programming and scripting project 2020
 
-This repository is used for the final project given during the Programming and scripting module on Higher Diploma in Data Analytics course from GMIT.
+This repository is used for the final project given during the Programming and scripting module on Higher Diploma in Data Analytics course from GMIT. Topic of the project is research and investigation of IFisher's ris dataset.
 
 Detailed project description can be found on [GitHub](https://github.com/ianmcloughlin/project-pands-2020/blob/master/project.pdf) from the lecturer Ian McLoughlin.
 
@@ -36,7 +36,7 @@ In this article, Fisher developed and evaluated a linear function to differentia
 
 Iris flower difference in species is pictured below. [02]
 
-![alt text](https://github.com/sandraelekes/pands-project-2020/blob/master/iris-species.png "Iris flower species")
+<img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/iris-species.png" alt= "Iris flower species">
 
 
 ## **Iris dataset file**
@@ -70,13 +70,10 @@ In this section is explanation of the code for the imported libraries, dataset i
 ```
 ***NumPy*** is a Python library that provides a multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more.\
 Shorter definition is thah *NumPy* is the fundamental package for scientific computing in Python. [04]\
-Geeksforgeeks. com has an interesting two part tutorial on *NumPy* referenced in [Worthy mentions](#worthy-mentions).
 
 
 ***pandas*** is a Python package for data science; it offers data structures for data manipulation and analysis. [05]\
 In this project *pandas* is used for creating a summary of the dataset from a .csv file.\
-More useful information about *pandas* can be found on [Towards data science](https://towardsdatascience.com/a-quick-introduction-to-the-pandas-python-library-f1b678f34673), [Real python.com](https://realpython.com/pandas-dataframe/) and [Pandas.pydata.org](https://pandas.pydata.org/docs/#).
-
 
 ***Matplotlib*** is a comprehensive visualisation library in Python, built on NumPy arrays, for creating static, animated and interactive 2D plots or arrays. [06] [07]\
 *matplotlib.pyplot* is a state-based interface to *matplotlib*. It provides a MATLAB-like way of plotting. *pyplot* is mainly intended for interactive plots and simple cases of programmatic plot generation. [08]
@@ -86,8 +83,8 @@ Working with DataFrames is a bit easier with the Seaborn because the plotting fu
 [Elite data science](https://elitedatascience.com/python-seaborn-tutorial) has interesting tutorial on *seaborn* presented on a famous Pokemon cartoon based dataset.
 
 ***sys*** module represents system-specific parameters and functions and provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter. [11]
-Interesting tutorial on *sys* can be found on [Python programming](https://pythonprogramming.net/sys-module-python-3/) and [Data Flair](https://data-flair.training/blogs/python-sys-module/).
 
+Interesting tutorials for working with these libraries can be found on [Worthy mentions](#worthy-mentions).
 
 ### **Libraries cheat sheets**
 
@@ -101,10 +98,10 @@ List of usefull cheat sheets for libraries used in this project:
 ## **Dataset import**
 
 ```python
-    ifds = pd.read_csv("Iris_dataset.csv", index_col="Id")
+    ifds = pd.read_csv("Iris_dataset.csv", index_col = "Id")
 ```
 This line of code is used for reading the .csv file into DataFrame and storing it as a variable *ifds* (iris flower dataset) for further analysis and manipulation.\
-Since *pandas* is using zero-based integer indices in the DataFrame,  *index_col="Id"* was used to make the Id column an index column while reading the file. That means that the index column will not be taken into consideration while analysing the data. [12]
+Since *pandas* is using zero-based integer indices in the DataFrame,  *index_col = "Id"* was used to make the Id column an index column while reading the file. That means that the index column will not be taken into consideration while analysing the data. [12]
 
 ## **Dataset summary**
 
@@ -281,17 +278,16 @@ Circle style marker with an edgecolor is chosen for neater look. [29] [30]
 
 ## **Pairplot**
 
-<img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Iris-dataset-pairplot.png" alt = "Iris dataset pairplot">
+Pairplot gives the better comparison and observation of the data and provides enough informations to draw conclusions.
 
-Pairplot gives the better comparison and observation of the data and provides enough informations to draw conclusions. 
+<img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Iris-dataset-pairplot.png" alt = "Iris dataset pairplot">
 
 
 ### **Pairplot code**
 
 ```python
     def pairplot():
-        sns.pairplot(ifds, hue = "Species", diag_kind = "hist", 
-        palette = ["deeppink","mediumorchid","navy"])
+        sns.pairplot(ifds, hue = "Species", diag_kind = "hist", palette = ["deeppink","mediumorchid","navy"])
         plt.savefig("Iris-dataset-pairplot.png")
         plt.show()
 ```
@@ -299,10 +295,10 @@ Pairplot is used for plotting pairwise relationships in datasets. The default di
 
 Because there is 4 different variables (SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm) 4x4 plot is created.
 
-# Conclusion
+# **Conclusion**
 
 Even though it has the widest sepals of all three species, Iris setosa is the smallest flower.\
-If comparing by sepal width and length, Iris versicolor and Iris virginica would not be distinguished easy.\
+If compared by sepal width and length, Iris versicolor and Iris virginica would not be distinguished easy.\
 But observing the petal length and width, and petal and sepal ratios the difference is noticed, with Iris virginica being the biggest of the flowers.
 
 
@@ -381,3 +377,4 @@ This is the list of sources that have not been used in analysis or summary of th
 * https://rajritvikblog.wordpress.com/2017/06/29/iris-dataset-analysis-python/
 * https://www.kaggle.com/abhishekkrg/python-iris-data-visualization-and-explanation
 * https://www.kaggle.com/aschakra/iris-data-visualization-using-python
+* https://www.kaggle.com/search?q=iris+dataset+analysis
