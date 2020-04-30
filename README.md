@@ -9,7 +9,7 @@ Detailed project description can be found on [GitHub](https://github.com/ianmclo
 * [Iris dataset information](#iris-dataset)
     * [Iris dataset history](#iris-dataset-history)
     * [Iris dataset file](#iris-dataset-file)
-* [Python code](#python-code)
+* [Dataset code and analysis](#dataset-code-and-analysis)
     * [Imported libraries and modules](#imported-libraries-and-modules)
         * [Libraries cheat sheets](#libraries-cheat-sheets)
     * [Dataset import](#dataset-import)
@@ -18,7 +18,7 @@ Detailed project description can be found on [GitHub](https://github.com/ianmclo
         * [Samples of each type - info()](#samples-of-each-type---info())
 * [Plots](#plots)
     * [Histograms](#histograms)
-        * [Histogram code] (#histogram-code)
+        * [Histogram code](#histogram-code)
     * [Scatterplots](#scatterplots)
 * [References](#references)
     * [Worthy mentions](#worthy-mentions)
@@ -52,7 +52,7 @@ The columns that represent records mentioned above are :
 
 Iris dataset [03] used in this analysis can be found among files in this repository as [Iris_dataset.csv](https://github.com/sandraelekes/pands-project-2020/blob/master/Iris_dataset.csv).
 
-# **Python code**
+# **Dataset code and analysis**
 
 In this section is explanation of the code for the imported libraries, dataset import and summary. Code used for plotting is explained in [Plots](#plots).
 
@@ -199,6 +199,10 @@ Or, viewed in percentile:
 # Plots
 
 ## Histograms
+
+![alt text](https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-lenght.png "Sepal length in cm")
+
+![alt text](https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-lenght.png "Petal length in cm")
 
 ### Histogram code
 Histograms are coded with the help of functions. There are 4 functions representing each histogram: Sepal Length, Sepal Width, Petal Length and Petal Width.
