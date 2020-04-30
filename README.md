@@ -58,12 +58,13 @@ In this section is explanation of the code for the imported libraries, dataset i
 
 ## **Imported libraries and modules**
 
+```python
     import numpy as np
     import pandas as pd
     import matplotlib.pyplot as plt
     import seaborn as sns
     import sys
-
+```
 ***NumPy*** is a Python library that provides a multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more.\
 Shorter definition is thah *NumPy* is the fundamental package for scientific computing in Python. [04]\
 Geeksforgeeks. com has an interesting two part tutorial on *NumPy* referenced in [Worthy mentions](#worthy-mentions).
@@ -96,8 +97,9 @@ List of usefull cheat sheets for libraries used in this project:
 
 ## **Dataset import**
 
+```python
     ifds = pd.read_csv("dataset.csv", index_col="Id")
-
+```
 This line of code is used for reading the .csv file into DataFrame and storing it as a variable *ifds* (iris flower dataset) for further analysis and manipulation.\
 Since *pandas* is using zero-based integer indices in the DataFrame,  *index_col="Id"* was used to make the Id column an index column while reading the file. That means that the index column will not be taken into consideration while analysing the data. [12]
 
@@ -105,6 +107,7 @@ Since *pandas* is using zero-based integer indices in the DataFrame,  *index_col
 
 Part of the code for summary:
 
+```python
     def summary_to_file():
         sys.stdout = open ("analysis_summary.txt","w")
         ...
@@ -118,6 +121,7 @@ Part of the code for summary:
         ...
         print (((ifds["Species"].value_counts(normalize=True))*100))
         sys.stdout.close()
+```
 
 Dataset summary is not shown while starting the program, but rather stored in [analysis_summary.txt](https://github.com/sandraelekes/pands-project-2020/blob/master/analysis_summary.txt).
 
@@ -200,16 +204,17 @@ Or, viewed in percentile:
 
 ## Histograms
 
-![alt text](https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-lenght.png "Sepal length in cm")
+![alt text](https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-lenght.png "Sepal length in cm") | ![alt text](https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-width.png "Sepal width in cm")
 
-![alt text](https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-lenght.png "Petal length in cm")
+![alt text](https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-lenght.png "Petal length in cm") | ![alt text](https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-width.png "Petal width in cm")
+
 
 ### Histogram code
 Histograms are coded with the help of functions. There are 4 functions representing each histogram: Sepal Length, Sepal Width, Petal Length and Petal Width.
 
 Example of part of the code:
 
-
+```python
     iris_s = ifds[ifds.Species == "Iris-setosa"]
     iris_vers = ifds[ifds.Species == "Iris-versicolor"]
     iris_virg = ifds[ifds.Species == "Iris-virginica"]
@@ -225,7 +230,7 @@ Example of part of the code:
         plt.legend()
         plt.savefig("Petal-lenght.png")
         plt.show()
-
+```
 
 Variables *iris_s*, *iris_vers* and *iris_virg* are used for subsetting original dataframes for Iris setosa, Iris versicolor and Iris virginica, respectively. They are set outside of the functions for multiple use.[21]
 
@@ -276,7 +281,7 @@ Parameter *color* was set for a better distinction between species of flowers an
 [22] [StackOverflow. Text size of x and y axis and the title on matplotlib.](https://stackoverflow.com/questions/27350226/how-to-make-the-text-size-of-the-x-and-y-axis-labels-and-the-title-on-matplotlib/27350945)\
 [23] [StackOverflow. Change size of figures drawn with matplotlib.](https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib)\
 [24] [Seaborn.pydata. Seaborn.distplot](https://seaborn.pydata.org/generated/seaborn.distplot.html#seaborn.distplot)\
-[25] [Python graph gallery](https://python-graph-gallery.com/196-select-one-color-with-matplotlib/)\
+[25] [Python graph gallery. Select color with matplotlib](https://python-graph-gallery.com/196-select-one-color-with-matplotlib/)
 
 
 
