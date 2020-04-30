@@ -38,9 +38,32 @@ def summary_to_file():
     print ("==============================================================================")
     sys.stdout.close()
 
+def histogram():
+    # reference for figsize: https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib
+    plt.figure(figsize=(9,9))
+    
+    # reference for plotting multiple histograms on one plot with different colors:
+    # https://cmdlinetips.com/2019/02/how-to-make-histogram-in-python-with-pandas-and-seaborn/
+    iris_s = ifds[ifds.Species == "Iris-setosa"]
+    iris_vers = ifds[ifds.Species == "Iris-versicolor"]
+    iris_virg = ifds[ifds.Species == "Iris-virginica"]
+
+    # plotting a histogram for Petal length
+    sns.distplot(iris_s["PetalLengthCm"],  kde=False, label="Iris setosa", color="deeppink")
+    sns.distplot(iris_vers["PetalLengthCm"],  kde=False, label="Iris versicolor", color="purple")
+    sns.distplot(iris_virg["PetalLengthCm"],  kde=False, label="Iris virginica", color="navy")
+    plt.title("Petal length in cm", size = 20)
+    plt.xlabel("")
+    plt.ylabel("Frequency", size = 16)
+    plt.legend()
+    plt.savefig("Petal-lenght.png")
+    plt.show()
+
+
 # variable ifds stands for iris flower dataset
 # with read.csv() we are reading the .csv file into DataFrame and storing it as ifds variable for further use and manipulation
 # index_col="Id" was used to make the Id column an index column
 # reference for index_col: https://realpython.com/python-csv/
 ifds = pd.read_csv("dataset.csv", index_col="Id")
-summary_to_file()
+#summary_to_file()
+histogram()
