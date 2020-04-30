@@ -21,6 +21,7 @@ Detailed project description can be found on [GitHub](https://github.com/ianmclo
         * [Histogram code](#histogram-code)
     * [Scatterplots](#scatterplots)
         * [Scatterplot code](#scatterplot-code)
+    * [Pairplot](#pairplot)
 * [References](#references)
     * [Worthy mentions](#worthy-mentions)
     * [GitHub editing](#github-editing)
@@ -261,7 +262,8 @@ Scatterplot code exmple:
 ```python
     def sepal_length_width_scat():
         plt.figure(figsize = (9,9))
-        sns.scatterplot(x = "SepalLengthCm", y = "SepalWidthCm", data = ifds, marker = "o", hue = "Species", palette = ["deeppink","mediumorchid","navy"], edgecolor = "dimgrey")
+        sns.scatterplot(x = "SepalLengthCm", y = "SepalWidthCm", data = ifds, marker = "o", hue = "Species", 
+        palette = ["deeppink","mediumorchid","navy"], edgecolor = "dimgrey")
         plt.title("Sepal length and Sepal width comparison", size = 20)
         plt.xlabel("Sepal length", size = 16)
         plt.ylabel("Sepal widthth", size = 16)
@@ -276,6 +278,32 @@ Data that are used and compared this are columns "SepalLengthCm" and "SepalWidth
 Like in histograms, lots of parameters for scatterplots are added for aesthetic purposes.\
 Palette of colors used is the same as for the histograms.
 Circle style marker with an edgecolor is chosen for neater look. [29] [30]
+
+## **Pairplot**
+
+<img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Iris-dataset-pairplot.png" alt = "Iris dataset pairplot">
+
+Pairplot gives the better comparison and observation of the data and provides enough informations to draw conclusions. 
+
+
+### **Pairplot code**
+
+```python
+    def pairplot():
+        sns.pairplot(ifds, hue = "Species", diag_kind = "hist", 
+        palette = ["deeppink","mediumorchid","navy"])
+        plt.savefig("Iris-dataset-pairplot.png")
+        plt.show()
+```
+Pairplot is used for plotting pairwise relationships in datasets. The default diagonal plot is KDE, but in this case it is changed to histogram with the parameter *diag_kind*. Color palette remained the same. [31]
+
+Because there is 4 different variables (SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm) 4x4 plot is created.
+
+# Conclusion
+
+Even though it has the widest sepals of all three species, Iris setosa is the smallest flower.\
+If comparing by sepal width and length, Iris versicolor and Iris virginica would not be distinguished easy.\
+But observing the petal length and width, and petal and sepal ratios the difference is noticed, with Iris virginica being the biggest of the flowers.
 
 
 
@@ -319,7 +347,8 @@ Circle style marker with an edgecolor is chosen for neater look. [29] [30]
 [27] [Seaborn. Relational tutorial.](https://seaborn.pydata.org/tutorial/relational.html#relational-tutorial)\
 [28] [Honing Data Science](https://honingds.com/blog/seaborn-scatterplot/)\
 [29] [Matplotlib. Markers](https://matplotlib.org/3.1.1/api/markers_api.html)\
-[30] [StackOverflow. Matplotlib border around Scatterplot points.](https://stackoverflow.com/questions/50706901/matplotlib-border-around-scatter-plot-points)
+[30] [StackOverflow. Matplotlib border around Scatterplot points.](https://stackoverflow.com/questions/50706901/matplotlib-border-around-scatter-plot-points)\
+[31] [Kite. Seaborn pairplot.](https://kite.com/python/docs/seaborn.pairplot)
 
 
 
