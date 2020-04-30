@@ -20,8 +20,10 @@ Detailed project description can be found on [GitHub](https://github.com/ianmclo
     * [Histograms](#histograms)
         * [Histogram code](#histogram-code)
     * [Scatterplots](#scatterplots)
+        * [Scatterplot code](#scatterplot-code)
 * [References](#references)
     * [Worthy mentions](#worthy-mentions)
+    * [GitHub editing](#github-editing)
     * [Dataset analysis approach by others](#dataset-analysis-approach-by-others)
 
 # **Iris dataset**
@@ -200,17 +202,17 @@ Or, viewed in percentile:
 </p>
 </details>
 
-# Plots
+# **Plots**
 
-## Histograms
+## **Histograms**
 
-<img src="https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-lenght.png" alt="Sepal length" width="450" height="450"> <img src="https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-width.png" alt="Sepal width" width="450" height="450">
+<img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-lenght.png" alt = "Sepal length" width = "500" height = "500"> <img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-width.png" alt = "Sepal width" width = "500" height = "500">
 
-<img src="https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-lenght.png" alt="Petal length" width="450" height="450"> <img src="https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-width.png" alt="Petal width" width="450" height="450">
+<img src="https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-lenght.png" alt = "Petal length" width = "500" height = "500"> <img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-width.png" alt = "Petal width" width = "500" height = "500">
 
 
-### Histogram code
-Histograms are coded with the help of functions. There are 4 functions representing each histogram: Sepal Length, Sepal Width, Petal Length and Petal Width.
+### **Histogram code**
+Histograms are coded with the help of functions. There are 4 functions representing each histogram: Sepal Length, Sepal Width, Petal Length and Petal Width. All of those functions are grouped in a function called *histograms()*.
 
 Example of part of the code:
 
@@ -220,10 +222,10 @@ Example of part of the code:
     iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
     def petal_length_hist():
-        plt.figure(figsize=(9,9))
-        sns.distplot(iris_s["PetalLengthCm"],  kde=False, label="Iris setosa", color="deeppink")
-        sns.distplot(iris_vers["PetalLengthCm"],  kde=False, label="Iris versicolor", color="purple")
-        sns.distplot(iris_virg["PetalLengthCm"],  kde=False, label="Iris virginica", color="navy")
+        plt.figure(figsize = (9,9))
+        sns.distplot(iris_s["PetalLengthCm"],  kde = False, label = "Iris setosa", color = "deeppink")
+        sns.distplot(iris_vers["PetalLengthCm"],  kde = False, label = "Iris versicolor", color = "mediumorchid")
+        sns.distplot(iris_virg["PetalLengthCm"],  kde = False, label = "Iris virginica", color = "navy")
         plt.title("Petal length in cm", size = 20)
         plt.xlabel("")
         plt.ylabel("Frequency", size = 16)
@@ -241,10 +243,36 @@ Lot of parameters in codes are added for aesthetic purposes only. Example od tha
 Parameter *kde* (kernel density estimate) is set to False as it was unnecessary in this case.\
 Parameter *color* was set for a better distinction between species of flowers and nicer picture. [25]\
 
+## **Scatterplots**
+
+<img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-length-width.png" alt = "Sepal length and Sepal width comparison" width = "500" height = "500">
+
+### **Scatterplot code**
+
+Scatterplots are coded as two different functions: Sepal width and length comparison and Petal width and length comparison. Both those functions are united uder a function *scatterplots()*.
+
+Scatterplot code exmple:
+
+```python
+    def sepal_length_width_scat():
+        plt.figure(figsize = (9,9))
+        sns.scatterplot(x = "SepalLengthCm", y = "SepalWidthCm", data = ifds, marker = "o", hue = "Species", palette = ["deeppink","mediumorchid","navy"], edgecolor = "dimgrey")
+        plt.title("Sepal length and Sepal width comparison", size = 20)
+        plt.xlabel("Sepal length", size = 16)
+        plt.ylabel("Sepal widthth", size = 16)
+        plt.legend()
+        plt.savefig("Sepal-length-width.png")
+        plt.show()
+```
+
+*sns.scatterplot()* depicts the joint distribution of two variables using a cloud of points, where each point represents an observation in the dataset. Viewr can then determine if there is any meaningful relationships between the presented data. [26] [27]\
+Data that are used and compared this are columns "SepalLengthCm" and "SepalWidthCm" and they are grouped by "Species". [28]
+
+Like in histograms, lots of parameters for scatterplots are added for aesthetic purposes.\
+Palette of colors used is the same as for the histograms.
+Circle style marker with an edgecolor is chosen for neater look. [29] [30]
 
 
-
-## Scatterplots
 
 # Technologies used
 
@@ -281,7 +309,12 @@ Parameter *color* was set for a better distinction between species of flowers an
 [22] [StackOverflow. Text size of x and y axis and the title on matplotlib.](https://stackoverflow.com/questions/27350226/how-to-make-the-text-size-of-the-x-and-y-axis-labels-and-the-title-on-matplotlib/27350945)\
 [23] [StackOverflow. Change size of figures drawn with matplotlib.](https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib)\
 [24] [Seaborn.pydata. Seaborn.distplot](https://seaborn.pydata.org/generated/seaborn.distplot.html#seaborn.distplot)\
-[25] [Python graph gallery. Select color with matplotlib](https://python-graph-gallery.com/196-select-one-color-with-matplotlib/)
+[25] [Python graph gallery. Select color with matplotlib](https://python-graph-gallery.com/196-select-one-color-with-matplotlib/)\
+[26] [Seaborn. Seaborn scatterplot.](https://seaborn.pydata.org/generated/seaborn.scatterplot.html)\
+[27] [Seaborn. Relational tutorial.](https://seaborn.pydata.org/tutorial/relational.html#relational-tutorial)\
+[28] [Honing Data Science](https://honingds.com/blog/seaborn-scatterplot/)\
+[29] [Matplotlib. Markers](https://matplotlib.org/3.1.1/api/markers_api.html)\
+[30] [StackOverflow. Matplotlib border around Scatterplot points.](https://stackoverflow.com/questions/50706901/matplotlib-border-around-scatter-plot-points)
 
 
 
@@ -290,7 +323,6 @@ Parameter *color* was set for a better distinction between species of flowers an
 This is the list of sources that have not been used in analysis or summary of the Iris dataset but rather for better understanding of requirements for the project, researching how to edit the readme file and also interesting sources worth of reading.
 
 * [Fisher, R. A. (1936). “The Use of Multiple Measurements in Taxonomic Problems”](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x)
-* [Github. Deleting files.](https://help.github.com/en/github/managing-files-in-a-repository/deleting-files)
 * [Towards data science. Introduction to pandas.](https://towardsdatascience.com/a-quick-introduction-to-the-pandas-python-library-f1b678f34673)
 * [Geeksforgeeks. NumPy - Introduction](https://www.geeksforgeeks.org/numpy-in-python-set-1-introduction/)
 * [Geeksforgeeks. NumPy - Advanced](https://www.geeksforgeeks.org/numpy-python-set-2-advanced/?ref=lbp)
@@ -300,6 +332,15 @@ This is the list of sources that have not been used in analysis or summary of th
 * [Python programming. Sys module.](https://pythonprogramming.net/sys-module-python-3/)
 * [Data Flair. Python sys module](https://data-flair.training/blogs/python-sys-module/)
 * [Python graph gallery](https://python-graph-gallery.com/)
+* [Queirozf. Pandas dataframe plot examples with matplotlib pyplot.](http://queirozf.com/entries/pandas-dataframe-plot-examples-with-matplotlib-pyplot)
+* [Matplotlib. Colormaps.](https://matplotlib.org/tutorials/colors/colormaps.html)
+
+## GitHub editing
+* [GitHub. Deleting files.](https://help.github.com/en/github/managing-files-in-a-repository/deleting-files)
+* [StackOverflow. Resize image in the wiki of GitHub.](https://stackoverflow.com/questions/24383700/resize-image-in-the-wiki-of-github-using-markdown)
+* [StackOverflow. Display images side by side.](https://stackoverflow.com/questions/24319505/how-can-one-display-images-side-by-side-in-a-github-readme-md)
+* [GitHub - adam-p. Markdown cheat sheet.](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#headers)
+
 
 ## Dataset analysis approach by others
 
