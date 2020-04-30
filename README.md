@@ -100,7 +100,7 @@ List of usefull cheat sheets for libraries used in this project:
 ## **Dataset import**
 
 ```python
-    ifds = pd.read_csv("dataset.csv", index_col="Id")
+    ifds = pd.read_csv("Iris_dataset.csv", index_col="Id")
 ```
 This line of code is used for reading the .csv file into DataFrame and storing it as a variable *ifds* (iris flower dataset) for further analysis and manipulation.\
 Since *pandas* is using zero-based integer indices in the DataFrame,  *index_col="Id"* was used to make the Id column an index column while reading the file. That means that the index column will not be taken into consideration while analysing the data. [12]
@@ -245,9 +245,12 @@ Parameter *color* was set for a better distinction between species of flowers an
 
 ## **Scatterplots**
 
-<img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-length-width.png" alt = "Sepal length and Sepal width comparison" width = "450" height = "450">
+<img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-length-width.png" alt = "Sepal length and Sepal width comparison" width = "450" height = "450"> <img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-length-width.png" alt = "Petal length and Petal width comparison" width = "450" height = "450">
 
-From the Sepal length and Width comparison picture it is visible that it is easier to distinguish Iris setosa than Iris versicolor and Iris virginica. Iris setosa has wider and shorter sepals, while the other species are not easy to differentiate based on this data..
+
+From the Sepal length and Sepal width comparison picture it is visible that it is easier to distinguish Iris setosa than Iris versicolor and Iris virginica. Iris setosa has wider and shorter sepals, while the other species are not easy to differentiate based on this data.
+
+From the Petal length and Petal width comparison picture the difference bewtween the three speices is much more noticable. Iris setosa is very distinct and has the smallest and narrowest petals of the three. Iris virginica has the biggest petals.
 
 ### **Scatterplot code**
 
