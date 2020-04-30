@@ -206,9 +206,9 @@ Or, viewed in percentile:
 
 ## **Histograms**
 
-<img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-lenght.png" alt = "Sepal length" width = "500" height = "500"> <img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-width.png" alt = "Sepal width" width = "500" height = "500">
+<img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-lenght.png" alt = "Sepal length" width = "450" height = "450"> <img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-width.png" alt = "Sepal width" width = "450" height = "450">
 
-<img src="https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-lenght.png" alt = "Petal length" width = "500" height = "500"> <img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-width.png" alt = "Petal width" width = "500" height = "500">
+<img src="https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-lenght.png" alt = "Petal length" width = "450" height = "450"> <img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-width.png" alt = "Petal width" width = "450" height = "450">
 
 
 ### **Histogram code**
@@ -245,7 +245,9 @@ Parameter *color* was set for a better distinction between species of flowers an
 
 ## **Scatterplots**
 
-<img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-length-width.png" alt = "Sepal length and Sepal width comparison" width = "500" height = "500">
+<img src = "https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-length-width.png" alt = "Sepal length and Sepal width comparison" width = "450" height = "450">
+
+From the Sepal length and Width comparison picture it is visible that it is easier to distinguish Iris setosa than Iris versicolor and Iris virginica. Iris setosa has wider and shorter sepals, while the other species are not easy to differentiate based on this data..
 
 ### **Scatterplot code**
 
