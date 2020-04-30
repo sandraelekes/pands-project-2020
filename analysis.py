@@ -134,12 +134,16 @@ def scatterplots():
     sepal_length_width_scat()
     petal_length_width_scat()
 
+def pairplot():
+    sns.pairplot(ifds, hue = "Species", diag_kind = "hist", palette = ["deeppink","mediumorchid","navy"])
+    plt.savefig("Iris-dataset-pairplot.png")
+    plt.show()
 # main part of the code
 
 # index_col = "Id" was used to make the Id column an index column
 # reference for index_col: https://realpython.com/python-csv/
 
-ifds = pd.read_csv("dataset.csv", index_col = "Id")
+ifds = pd.read_csv("Iris_dataset.csv", index_col = "Id")
 
 #summary_to_file()
 
@@ -148,4 +152,5 @@ iris_vers = ifds[ifds.Species == "Iris-versicolor"]
 iris_virg = ifds[ifds.Species == "Iris-virginica"]
 
 #histograms()
-scatterplots()
+# scatterplots()
+pairplot()
