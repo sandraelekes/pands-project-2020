@@ -204,11 +204,9 @@ Or, viewed in percentile:
 
 ## Histograms
 
-<img src="https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-lenght.png" alt="Sepal length" width="100" height="100">
-![alt text](https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-width.png width="10" height="10" "Sepal width in cm")
+<img src="https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-lenght.png" alt="Sepal length" width="400" height="400"> <img src="https://github.com/sandraelekes/pands-project-2020/blob/master/Sepal-width.png" alt="Sepal width" width="400" height="400">
 
-![alt text](https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-lenght.png "Petal length in cm")
-![alt text](https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-width.png "Petal width in cm")
+<img src="https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-lenght.png" alt="Petal length" width="400" height="400"> <img src="https://github.com/sandraelekes/pands-project-2020/blob/master/Petal-width.png" alt="Petal width" width="400" height="400">
 
 
 ### Histogram code
