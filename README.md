@@ -16,8 +16,13 @@ Detailed project description can be found on [GitHub](https://github.com/ianmclo
     * [Dataset summary](#datasetsummary)
         * [Summary of the values - describe()](#summary-of-the-values---describe())
         * [Samples of each type - info()](#samples-of-each-type---info())
+* [Plots](#plots)
+    * [Histograms](#histograms)
+        * [Histogram code] (#histogram-code)
+    * [Scatterplots](#scatterplots)
 * [References](#references)
     * [Worthy mentions](#worthy-mentions)
+    * [Dataset analysis approach by others](#dataset-analysis-approach-by-others)
 
 # **Iris dataset**
 
@@ -48,6 +53,8 @@ The columns that represent records mentioned above are :
 Iris dataset [03] used in this analysis can be found among files in this repository as [Iris_dataset.csv](https://github.com/sandraelekes/pands-project-2020/blob/master/Iris_dataset.csv).
 
 # **Python code**
+
+In this section is explanation of the code for the imported libraries, dataset import and summary. Code used for plotting is explained in [Plots](#plots).
 
 ## **Imported libraries and modules**
 
@@ -189,6 +196,47 @@ Or, viewed in percentile:
 </p>
 </details>
 
+# Plots
+
+## Histograms
+
+### Histogram code
+Histograms are coded with the help of functions. There are 4 functions representing each histogram: Sepal Length, Sepal Width, Petal Length and Petal Width.
+
+Example of part of the code:
+
+
+    iris_s = ifds[ifds.Species == "Iris-setosa"]
+    iris_vers = ifds[ifds.Species == "Iris-versicolor"]
+    iris_virg = ifds[ifds.Species == "Iris-virginica"]
+
+    def petal_length_hist():
+        plt.figure(figsize=(9,9))
+        sns.distplot(iris_s["PetalLengthCm"],  kde=False, label="Iris setosa", color="deeppink")
+        sns.distplot(iris_vers["PetalLengthCm"],  kde=False, label="Iris versicolor", color="purple")
+        sns.distplot(iris_virg["PetalLengthCm"],  kde=False, label="Iris virginica", color="navy")
+        plt.title("Petal length in cm", size = 20)
+        plt.xlabel("")
+        plt.ylabel("Frequency", size = 16)
+        plt.legend()
+        plt.savefig("Petal-lenght.png")
+        plt.show()
+
+
+Variables *iris_s*, *iris_vers* and *iris_virg* are used for subsetting original dataframes for Iris setosa, Iris versicolor and Iris virginica, respectively. They are set outside of the functions for multiple use.[21]
+
+Lot of parameters in codes are added for aesthetic purposes only. Example od that is adding size to title and labels text. [22]
+*figsize* is defined as 9 by 9 inches so on the saved picture the legend wouldn't be positioned over the histogram. Important to notice - figure size must be defined before start of plotting. [23]
+
+*distplot()* is a function used to flexibly plot a univariate distribution of observations. [24] \
+Parameter *kde* (kernel density estimate) is set to False as it was unnecessary in this case.\
+Parameter *color* was set for a better distinction between species of flowers and nicer picture. [25]\
+
+
+
+
+## Scatterplots
+
 # Technologies used
 
 * Visual Studio Code - version 1.44.2
@@ -219,7 +267,13 @@ Or, viewed in percentile:
 [17] [StackOverflow. Python writing function output to a file.](https://stackoverflow.com/questions/28356648/python-writing-function-output-to-a-file)\
 [18] [Towards Data Science. Getting started to data analysis with Python pandas](https://towardsdatascience.com/getting-started-to-data-analysis-with-python-pandas-with-titanic-dataset-a195ab043c77)\
 [19] [Medium. Exploratory data analysis.](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d)\
-[20] [Towards Data Science. Getting more value from the *pandas* value counts.](https://towardsdatascience.com/getting-more-value-from-the-pandas-value-counts-aa17230907a6)
+[20] [Towards Data Science. Getting more value from the *pandas* value counts.](https://towardsdatascience.com/getting-more-value-from-the-pandas-value-counts-aa17230907a6)\
+[21] [Cmdline tips. How to make histogram in python with pandas and seaborn.](https://cmdlinetips.com/2019/02/how-to-make-histogram-in-python-with-pandas-and-seaborn/)\
+[22] [StackOverflow. Text size of x and y axis and the title on matplotlib.](https://stackoverflow.com/questions/27350226/how-to-make-the-text-size-of-the-x-and-y-axis-labels-and-the-title-on-matplotlib/27350945)\
+[23] [StackOverflow. Change size of figures drawn with matplotlib.](https://stackoverflow.com/questions/332289/how-do-you-change-the-size-of-figures-drawn-with-matplotlib)\
+[24] [Seaborn.pydata. Seaborn.distplot](https://seaborn.pydata.org/generated/seaborn.distplot.html#seaborn.distplot)\
+[25] [Python graph gallery](https://python-graph-gallery.com/196-select-one-color-with-matplotlib/)\
+
 
 
 ## Worthy mentions
@@ -236,6 +290,7 @@ This is the list of sources that have not been used in analysis or summary of th
 * [Elite data science. Seaborn tutorial.](https://elitedatascience.com/python-seaborn-tutorial)
 * [Python programming. Sys module.](https://pythonprogramming.net/sys-module-python-3/)
 * [Data Flair. Python sys module](https://data-flair.training/blogs/python-sys-module/)
+* [Python graph gallery](https://python-graph-gallery.com/)
 
 ## Dataset analysis approach by others
 
